@@ -11,7 +11,7 @@ I portion of the controller accounts for the past values of errors between curre
 D portion of the controller accounts for the changes of the error of present value and the target value.  It is mainly used to counter rapid changes of the error which will cause the P portion of the controller to change rapidly also.  This part of the controller will act as to counter those changes and dampen the effect, minimizing oscillations caused by the P portion of the controller.
 
 ## Tuning the Parameter
-
+The parameters for PID coefficients were tuned offline with Ziegler-Nichols method that was mentioned in the classroom.  The method tunes Kp value first achieving close to constant oscillation while other coefficients are set to zero.  After Kp value have been found, Kd value is slowly tuned up to lessen the oscillation to achieve desired result.
 
 ---
 
