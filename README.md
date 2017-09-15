@@ -1,6 +1,18 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Discussion
+The PID controller stands for proportional-integral-derivative controller.  It is widely used for variety of applications in industry.
+
+P portion of the controller accounts for the difference between current value and the target value, which in our case is cross-track error represented as cte.  It is directly proportional to the cte value.  If the cte value increases, so does the output of proportional controller.
+
+I portion of the controller accounts for the past values of errors between current value and the target value.  In simple sense, it is a sum of previous errors to account for the tendency of the vehicle in our case.  It could be something simple as twisted wheel alignment or a wind to the side of the car.  This portion of the controller helps to compensate those tendency.
+
+D portion of the controller accounts for the changes of the error of present value and the target value.  It is mainly used to counter rapid changes of the error which will cause the P portion of the controller to change rapidly also.  This part of the controller will act as to counter those changes and dampen the effect, minimizing oscillations caused by the P portion of the controller.
+
+## Tuning the Parameter
+
+
 ---
 
 ## Dependencies
@@ -19,7 +31,7 @@ Self-Driving Car Engineer Nanodegree Program
   * Run either `./install-mac.sh` or `./install-ubuntu.sh`.
   * If you install from source, checkout to commit `e94b6e1`, i.e.
     ```
-    git clone https://github.com/uWebSockets/uWebSockets 
+    git clone https://github.com/uWebSockets/uWebSockets
     cd uWebSockets
     git checkout e94b6e1
     ```
@@ -33,7 +45,7 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./pid`. 
+4. Run it: `./pid`.
 
 ## Editor Settings
 

@@ -12,10 +12,18 @@ public:
 
   /*
   * Coefficients
-  */ 
+  */
   double Kp;
   double Ki;
   double Kd;
+
+  /*
+  * Twiddle
+  */
+  double p_[3];
+  double dp_[3];
+  bool twiddle_on;
+  double tolerance_;
 
   /*
   * Constructor
@@ -40,7 +48,7 @@ public:
   /*
   * Calculate the total PID error.
   */
-  double TotalError();
+  double TotalError(double speed, bool steer);
 };
 
 #endif /* PID_H */
